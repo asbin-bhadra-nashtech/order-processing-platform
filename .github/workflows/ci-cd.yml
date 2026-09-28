@@ -1,0 +1,37 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        service:
+          - services/orderapi
+          - services/order-processor
+          - services/notification-service
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+
+      - name: Build and test
+        working-directory: ${{ matrix.service }}
+        run: ./gradlew clean test build
