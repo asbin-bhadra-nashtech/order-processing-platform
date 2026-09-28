@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-api
+spec:
+  replicas: {{ .Values.orderApi.replicaCount }}
+  selector:
+    matchLabels:
+      app: order-api
+  template:
+    metadata:
+      labels:
+        app: order-api
+    spec:
+      containers:
+        - name: order-api
+          image: "{{ .Values.orderApi.image.repository }}:{{ .Values.orderApi.image.tag }}"
+          imagePullPolicy: Never
+          ports:
+            - containerPort: {{ .Values.orderApi.service.port }}

@@ -1,0 +1,27 @@
+orderApi:
+  replicaCount: 1
+  image:
+    repository: order-api
+    tag: "1.0"
+  service:
+    type: NodePort
+    port: 8081
+    nodePort: 30081
+
+orderProcessor:
+  replicaCount: 1
+  image:
+    repository: order-processor
+    tag: "1.0"
+  service:
+    type: ClusterIP
+    port: 8082
+
+notificationService:
+  replicaCount: 1
+  image:
+    repository: notification-service
+    tag: "1.0"
+  service:
+    type: ClusterIP
+    port: 8083

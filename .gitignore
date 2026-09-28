@@ -24,7 +24,6 @@ Thumbs.db
 *.tfstate.*
 crash.log
 crash.*.log
-.terraform.lock.hcl
 
 # Kubernetes
 *.secret.yaml
