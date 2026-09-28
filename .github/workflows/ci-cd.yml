@@ -32,6 +32,10 @@ jobs:
           java-version: '21'
           cache: gradle
 
+      - name: Make Gradle wrapper executable
+        working-directory: ${{ matrix.service }}
+        run: chmod +x gradlew
+
       - name: Build and test
         working-directory: ${{ matrix.service }}
         run: ./gradlew clean test build
