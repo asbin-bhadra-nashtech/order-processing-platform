@@ -21,7 +21,7 @@ class NotificationServiceTest {
 
         NotificationRequest request =
                 new NotificationRequest(
-                        "asbin@example.com",
+                        "alex@example.com",
                         "Your order has been processed"
                 );
 

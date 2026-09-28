@@ -33,14 +33,14 @@ class OrderControllerTest {
 
         Order request = new Order(
                 null,
-                "Asbin",
+                "Alex",
                 "Laptop",
                 1
         );
 
         Order response = new Order(
                 1L,
-                "Asbin",
+                "Alex",
                 "Laptop",
                 1
         );
@@ -55,7 +55,7 @@ class OrderControllerTest {
                 )
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.customerName").value("Asbin"))
+                .andExpect(jsonPath("$.customerName").value("Alex"))
                 .andExpect(jsonPath("$.product").value("Laptop"))
                 .andExpect(jsonPath("$.quantity").value(1));
     }

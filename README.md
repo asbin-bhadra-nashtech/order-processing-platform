@@ -181,7 +181,7 @@ Invoke-RestMethod `
   -Method POST `
   -Uri "http://127.0.0.1:<PORT>/orders" `
   -ContentType "application/json" `
-  -Body '{"customerName":"Asbin","product":"Laptop","quantity":1}'
+  -Body '{"customerName":"Alex","product":"Laptop","quantity":1}'
 ```
 
 Get all orders:

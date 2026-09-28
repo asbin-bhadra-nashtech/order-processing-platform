@@ -26,20 +26,20 @@ class OrderServiceTest {
     void shouldCreateOrder() {
 
         Order order = new Order();
-        order.setCustomerName("Asbin");
+        order.setCustomerName("Alex");
         order.setProduct("Laptop");
         order.setQuantity(1);
 
         Order createdOrder = orderService.createOrder(order);
 
         assertNotNull(createdOrder.getId());
-        assertEquals("Asbin", createdOrder.getCustomerName());
+        assertEquals("Alex", createdOrder.getCustomerName());
         assertEquals("Laptop", createdOrder.getProduct());
         assertEquals(1, createdOrder.getQuantity());
 
         verify(orderProcessorClient).processOrder(
                 createdOrder.getId(),
-                "Asbin",
+                "Alex",
                 "Laptop",
                 1
         );
@@ -49,7 +49,7 @@ class OrderServiceTest {
     void shouldGetAllOrders() {
 
         Order order = new Order();
-        order.setCustomerName("Asbin");
+        order.setCustomerName("Alex");
         order.setProduct("Laptop");
         order.setQuantity(1);
 
@@ -58,14 +58,14 @@ class OrderServiceTest {
         List<Order> orders = orderService.getAllOrders();
 
         assertEquals(1, orders.size());
-        assertEquals("Asbin", orders.get(0).getCustomerName());
+        assertEquals("Alex", orders.get(0).getCustomerName());
     }
 
     @Test
     void shouldGetOrderById() {
 
         Order order = new Order();
-        order.setCustomerName("Asbin");
+        order.setCustomerName("Alex");
         order.setProduct("Laptop");
         order.setQuantity(1);
 

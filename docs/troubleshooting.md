@@ -102,7 +102,7 @@ Invoke-RestMethod `
   -Method POST `
   -Uri "http://localhost:8082/orders/process" `
   -ContentType "application/json" `
-  -Body '{"id":1,"customerName":"Asbin","product":"Laptop","quantity":1}'
+  -Body '{"id":1,"customerName":"Alex","product":"Laptop","quantity":1}'
 ```
 
 initially returned:
@@ -384,7 +384,7 @@ Invoke-RestMethod `
   -Method POST `
   -Uri "http://127.0.0.1:62201/orders" `
   -ContentType "application/json" `
-  -Body '{"customerName":"Asbin","product":"Laptop","quantity":1}'
+  -Body '{"customerName":"Alex","product":"Laptop","quantity":1}'
 ```
 
 The request successfully returned the created order.

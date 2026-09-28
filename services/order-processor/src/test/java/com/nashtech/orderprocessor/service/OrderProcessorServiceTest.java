@@ -26,7 +26,7 @@ class OrderProcessorServiceTest {
 
         Order order = new Order(
                 1L,
-                "Asbin",
+                "Alex",
                 "Laptop",
                 1
         );
